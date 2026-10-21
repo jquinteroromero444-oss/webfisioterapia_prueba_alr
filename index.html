@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Kineva | Fisioterapia Biomecánica & Readaptación en Madrid</title>
+  <meta name="description" content="Centro clínico en Paseo de la Castellana 142, Madrid. Diagnóstico con ecografía en directo, terapia manual avanzada y ejercicio terapéutico individual de 60 minutos."/>
+  
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#00685f",
+            "primary-container": "#008378",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#f4fffc",
+            "primary-fixed": "#89f5e7",
+            "primary-fixed-dim": "#6bd8cb",
+            "on-primary-fixed": "#00201d",
+            "secondary": "#006a63",
+            "secondary-container": "#99efe5",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#006f67",
+            "secondary-fixed": "#9cf2e8",
+            "secondary-fixed-dim": "#80d5cb",
+            "tertiary": "#006194",
+            "tertiary-container": "#007bb9",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#fdfcff",
+            "tertiary-fixed": "#cce5ff",
+            "tertiary-fixed-dim": "#93ccff",
+            "surface": "#f8f9ff",
+            "surface-dim": "#cbdbf5",
+            "surface-bright": "#f8f9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "surface-container": "#e5eeff",
+            "surface-container-high": "#dce9ff",
+            "surface-container-highest": "#d3e4fe",
+            "surface-variant": "#d3e4fe",
+            "surface-tint": "#006a61",
+            "on-surface": "#0b1c30",
+            "on-surface-variant": "#3d4947",
+            "outline": "#6d7a77",
+            "outline-variant": "#bcc9c6",
+            "inverse-surface": "#213145",
+            "inverse-on-surface": "#eaf1ff",
+            "inverse-primary": "#6bd8cb",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a",
+            "background": "#f8f9ff",
+            "on-background": "#0b1c30"
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            full: "9999px"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+    }
+    
+    /* Hide scrollbar for mobile carousels while keeping scrollability */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Details animation */
+    details[open] summary ~ * {
+      animation: sweep .25s ease-in-out;
+    }
+    @keyframes sweep {
+      0%    {opacity: 0; transform: translateY(-6px)}
+      100%  {opacity: 1; transform: translateY(0)}
+    }
+  </style>
+</head>
+
+<body class="bg-surface font-sans text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+
+  <!-- ================= HEADER & NAVIGATION (RESPONSIVE) ================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md border-b border-surface-container shadow-sm transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      <div class="h-16 lg:h-20 flex items-center justify-between gap-4">
+        
+        <!-- Left: Mobile Menu Toggle & Brand Logo -->
+        <div class="flex items-center gap-3">
+          <!-- Mobile Hamburger Toggle -->
+          <button id="menuToggle" aria-label="Abrir menú de navegación" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+            <span class="material-symbols-outlined text-[26px]">menu</span>
+          </button>
+
+          <!-- Logo -->
+          <a href="#inicio" class="flex items-center gap-2.5 focus:outline-none group">
+            <div class="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all shadow-sm">
+              <span class="material-symbols-outlined text-[24px]">vital_signs</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xl lg:text-2xl font-bold text-primary tracking-tight leading-none">Kineva</span>
+              <span class="text-[10px] lg:text-[11px] font-semibold text-on-surface-variant tracking-wider uppercase leading-none mt-1">Fisioterapia &amp; Readaptación</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Center: Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+          <a href="#inicio" class="px-3 py-2 text-sm font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container/60 rounded-lg transition-colors">Inicio</a>
+          <a href="#dolores" class="px-3 py-2 text-sm font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container/60 rounded-lg transition-colors">¿Qué te duele?</a>
+          <a href="#metodologia" class="px-3 py-2 text-sm font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container/60 rounded-lg transition-colors">Metodología</a>
+          <a href="#casos" class="px-3 py-2 text-sm font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container/60 rounded-lg transition-colors">Casos Clínicos</a>
+          <a href="#tratamientos" class="px-3 py-2 text-sm font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container/60 rounded-lg transition-colors">Especialidades</a>
+          <a href="#equipo" class="px-3 py-2 text-sm font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container/60 rounded-lg transition-colors">Equipo</a>
+          <a href="#precios" class="px-3 py-2 text-sm font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container/60 rounded-lg transition-colors">Precios</a>
+          <a href="#contacto" class="px-3 py-2 text-sm font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container/60 rounded-lg transition-colors">Contacto</a>
+        </nav>
+
+        <!-- Right: Direct Phone & Booking CTAs -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Direct Phone Call on Mobile/Desktop -->
+          <a href="tel:+34912345678" aria-label="Llamar a la clínica" class="w-10 h-10 flex items-center justify-center rounded-xl text-primary bg-surface-container/70 hover:bg-secondary-container transition-colors" title="Llamar: 912 345 678">
+            <span class="material-symbols-outlined text-[20px]">call</span>
+          </a>
+
+          <!-- Booking Button -->
+          <a href="#solicitar-cita" class="inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-primary text-on-primary font-semibold text-xs sm:text-sm hover:bg-primary-container shadow-sm hover:shadow transition-all active:scale-95">
+            <span class="material-symbols-outlined text-[18px] mr-1.5 hidden sm:inline">calendar_month</span>
+            <span>Reservar Cita</span>
+          </a>
+
+          <!-- Patient Portal Avatar Pill -->
+          <div class="hidden sm:flex w-9 h-9 rounded-full bg-surface-container text-primary items-center justify-center font-bold text-xs cursor-pointer hover:bg-secondary-container transition-colors" title="Portal del Paciente Kineva">
+            <span class="material-symbols-outlined text-[18px]">person</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu (Hidden by default, toggled with JS) -->
+    <div id="navDrawer" class="hidden lg:hidden bg-surface-container-lowest border-b border-surface-container px-6 py-4 shadow-xl">
+      <nav class="flex flex-col gap-2">
+        <a href="#inicio" class="mobile-nav-link flex items-center justify-between p-3 rounded-xl hover:bg-surface-container text-on-surface font-semibold text-sm transition-colors">
+          <span>Inicio</span>
+          <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+        </a>
+        <a href="#dolores" class="mobile-nav-link flex items-center justify-between p-3 rounded-xl hover:bg-surface-container text-on-surface font-semibold text-sm transition-colors">
+          <span>¿Qué te duele? (Diagnóstico)</span>
+          <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+        </a>
+        <a href="#metodologia" class="mobile-nav-link flex items-center justify-between p-3 rounded-xl hover:bg-surface-container text-on-surface font-semibold text-sm transition-colors">
+          <span>Metodología Paso a Paso</span>
+          <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+        </a>
+        <a href="#casos" class="mobile-nav-link flex items-center justify-between p-3 rounded-xl hover:bg-surface-container text-on-surface font-semibold text-sm transition-colors">
+          <span>Casos de Éxito &amp; Evolución</span>
+          <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+        </a>
+        <a href="#tratamientos" class="mobile-nav-link flex items-center justify-between p-3 rounded-xl hover:bg-surface-container text-on-surface font-semibold text-sm transition-colors">
+          <span>Especialidades Clínicas</span>
+          <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+        </a>
+        <a href="#equipo" class="mobile-nav-link flex items-center justify-between p-3 rounded-xl hover:bg-surface-container text-on-surface font-semibold text-sm transition-colors">
+          <span>Equipo Médico Colegiado</span>
+          <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+        </a>
+        <a href="#precios" class="mobile-nav-link flex items-center justify-between p-3 rounded-xl hover:bg-surface-container text-on-surface font-semibold text-sm transition-colors">
+          <span>Tarifas y Bonos</span>
+          <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+        </a>
+        <a href="#contacto" class="mobile-nav-link flex items-center justify-between p-3 rounded-xl hover:bg-surface-container text-on-surface font-semibold text-sm transition-colors">
+          <span>Ubicación y Horarios</span>
+          <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+        </a>
+        <div class="pt-2">
+          <a href="#solicitar-cita" class="mobile-nav-link w-full py-3 rounded-xl bg-primary text-on-primary font-bold text-center block shadow-md">
+            Pedir mi Primera Valoración (65€)
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="w-full pt-16 lg:pt-20">
+
+    <!-- ================= 1. HERO SECTION ================= -->
+    <section id="inicio" class="relative w-full bg-surface-bright overflow-hidden py-12 lg:py-20 border-b border-surface-container">
+      <!-- Background Ambient Glows -->
+      <div class="absolute -top-32 right-12 w-96 h-96 bg-secondary-container/30 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/2 left-0 w-80 h-80 bg-surface-container/60 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Left Text Content (7 cols desktop) -->
+          <div class="lg:col-span-7 flex flex-col items-start space-y-6">
+            
+            <!-- Authority Pill -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-semibold text-xs sm:text-sm shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              <span>Fisioterapia en Madrid · Centro Sanitario Autorizado CS-39420</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-on-surface tracking-tight leading-tight">
+              Vuelve a moverte <span class="text-primary underline decoration-secondary-container underline-offset-8">sin dolor</span>
+            </h1>
+
+            <!-- Description -->
+            <p class="text-base sm:text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+              Te explicamos qué te pasa con ecografía diagnóstica de alta resolución, lo tratamos con terapia manual avanzada y ejercicio guiado, y medimos tu mejora con datos precisos en cada sesión.
+            </p>
+
+            <!-- Conversion Action CTAs -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto pt-1">
+              <a href="#solicitar-cita" class="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 rounded-xl bg-primary text-on-primary font-bold text-sm sm:text-base shadow-md hover:bg-primary-container transition-all active:scale-95">
+                <span class="material-symbols-outlined text-[20px] mr-2">calendar_month</span>
+                <span>Pedir mi primera valoración</span>
+              </a>
+              <a href="https://wa.me/34600123456" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#25D366] hover:brightness-95 text-white font-bold text-sm sm:text-base shadow-sm transition-all active:scale-95">
+                <span class="material-symbols-outlined text-[20px] mr-2" style="font-variation-settings: 'FILL' 1;">chat</span>
+                <span>Escribir por WhatsApp</span>
+              </a>
+            </div>
+
+            <!-- Social Proof Rating -->
+            <div class="flex items-center gap-3 pt-2">
+              <div class="flex items-center gap-1 text-[#F59E0B]">
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              </div>
+              <div class="h-4 w-px bg-outline-variant"></div>
+              <p class="text-sm font-semibold text-on-surface">
+                4,9 ★ <span class="text-on-surface-variant font-normal">· +620 reseñas verificadas en Google</span>
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Right Photographic Composition (5 cols desktop) -->
+          <div class="lg:col-span-5 relative mt-4 lg:mt-0">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-surface-container-low aspect-[4/3] sm:aspect-[4/4] lg:aspect-[4/5] max-h-[500px] border border-surface-container">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAelw8lazOcqPlNipBj-JbvV7JBQIOAWlxsrAj3kKDEot1s-oNvnu_z7nx7YY2NxHf41NCqXXsOBfBBkE1KV1Dvp1SBSK-aXXlur4FukR0BjbNtPk-Xof37pHyvG1hFvVmFweq-SVZizOhei5SUg7nxpbnBxSNHMdd9q5Je2shn6YIc2Znx25LDcHUQ_qZZ_YOgsjIxIA8DkwIzJkwu86INKt7q4kNEpBbbK_GM1jqGir0JijfldrnSAQ" 
+                alt="Fisioterapeuta clínico realizando exploración con ecógrafo de alta resolución en Kineva Madrid" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/70 via-transparent to-transparent"></div>
+              
+              <!-- Bottom Card Info -->
+              <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-surface-container-lowest/95 backdrop-blur-md shadow-md border border-white/40">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-primary flex-shrink-0">
+                    <span class="material-symbols-outlined text-[22px]">monitoring</span>
+                  </div>
+                  <div>
+                    <p class="text-sm font-bold text-on-surface">Ecografía Musculoesquelética</p>
+                    <p class="text-xs text-on-surface-variant">Diagnóstico de precisión en 15 minutos sin listas de espera</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Authority Badge (Desktop) -->
+            <div class="absolute -top-4 -left-4 sm:-left-6 bg-surface-container-lowest p-3.5 rounded-2xl shadow-xl border border-surface-container flex items-center gap-3 max-w-[240px]">
+              <div class="w-9 h-9 rounded-xl bg-primary text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+                <span class="material-symbols-outlined text-[20px]">check_circle</span>
+              </div>
+              <div>
+                <p class="text-[10px] font-bold text-primary uppercase tracking-wider">Trato Exclusivo</p>
+                <p class="text-xs font-bold text-on-surface">1 Fisioterapeuta por paciente (60 min)</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. TRUST RIBBON ================= -->
+    <section class="w-full bg-surface-container/60 border-b border-surface-container py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 items-center text-center">
+          
+          <div class="bg-surface-container-lowest lg:bg-transparent p-4 rounded-2xl lg:p-0 shadow-sm lg:shadow-none flex flex-col items-center justify-center">
+            <span class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary tracking-tight">+4.800</span>
+            <span class="text-xs sm:text-sm text-on-surface-variant font-medium mt-1">Pacientes dados de alta</span>
+          </div>
+
+          <div class="bg-surface-container-lowest lg:bg-transparent p-4 rounded-2xl lg:p-0 shadow-sm lg:shadow-none flex flex-col items-center justify-center">
+            <span class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary tracking-tight">+12 años</span>
+            <span class="text-xs sm:text-sm text-on-surface-variant font-medium mt-1">Experiencia clínica en Madrid</span>
+          </div>
+
+          <div class="bg-surface-container-lowest lg:bg-transparent p-4 rounded-2xl lg:p-0 shadow-sm lg:shadow-none flex flex-col items-center justify-center">
+            <div class="flex items-center gap-1 text-primary">
+              <span class="material-symbols-outlined text-[24px]">verified_user</span>
+              <span class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">100%</span>
+            </div>
+            <span class="text-xs sm:text-sm text-on-surface-variant font-medium mt-1">Fisioterapeutas colegiados</span>
+          </div>
+
+          <div class="bg-surface-container-lowest lg:bg-transparent p-4 rounded-2xl lg:p-0 shadow-sm lg:shadow-none flex flex-col items-center justify-center">
+            <span class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-secondary font-bold tracking-tight">60 min</span>
+            <span class="text-xs sm:text-sm text-on-surface-variant font-medium mt-1">Con ecografía incluida</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. ¿QUÉ TE DUELE? (INTERACTIVE SELECTOR) ================= -->
+    <section id="dolores" class="w-full py-16 lg:py-24 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        
+        <div class="flex flex-col items-center text-center mb-12 max-w-2xl mx-auto">
+          <span class="text-xs font-bold text-primary uppercase tracking-widest bg-secondary-container/60 px-3 py-1 rounded-full mb-3">Diagnóstico Inicial</span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-on-surface tracking-tight">¿Qué zona o molestia te frena?</h2>
+          <p class="text-sm sm:text-base text-on-surface-variant mt-2">
+            Toca o haz clic en tu caso para orientar tu primera valoración clínica y reservar de forma prioritaria:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" id="painZoneGrid">
+          
+          <!-- Card 1 -->
+          <button type="button" onclick="selectPainZone('espalda', 'Espalda y Cuello')" class="pain-card text-left group p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md hover:border-primary/40 transition-all flex flex-col justify-between h-auto sm:h-56 active:scale-[0.98]">
+            <div class="flex items-start justify-between w-full mb-3">
+              <div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                <span class="material-symbols-outlined text-[26px]">accessibility_new</span>
+              </div>
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Espalda y Cuello</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant mt-1.5 leading-relaxed">Hernias, lumbalgias agudas, ciáticas, rectificación cervical y contracturas tensionales.</p>
+            </div>
+          </button>
+
+          <!-- Card 2 -->
+          <button type="button" onclick="selectPainZone('rodilla', 'Rodilla, Hombro y Tobillo')" class="pain-card text-left group p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md hover:border-primary/40 transition-all flex flex-col justify-between h-auto sm:h-56 active:scale-[0.98]">
+            <div class="flex items-start justify-between w-full mb-3">
+              <div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                <span class="material-symbols-outlined text-[26px]">sports_kabaddi</span>
+              </div>
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Rodilla, Hombro y Tobillo</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant mt-1.5 leading-relaxed">Tendinopatías, roturas de menisco, esguinces crónicos y manguito rotador con dolor nocturno.</p>
+            </div>
+          </button>
+
+          <!-- Card 3 -->
+          <button type="button" onclick="selectPainZone('deportiva', 'Lesión Deportiva')" class="pain-card text-left group p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md hover:border-primary/40 transition-all flex flex-col justify-between h-auto sm:h-56 active:scale-[0.98]">
+            <div class="flex items-start justify-between w-full mb-3">
+              <div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                <span class="material-symbols-outlined text-[26px]">sprint</span>
+              </div>
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Lesión Deportiva</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant mt-1.5 leading-relaxed">Roturas fibrilares, fascitis plantar, pubalgias y sobrecargas de corredores y deportistas.</p>
+            </div>
+          </button>
+
+          <!-- Card 4 -->
+          <button type="button" onclick="selectPainZone('postoperatorio', 'Rehabilitación Post-Operatorio')" class="pain-card text-left group p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md hover:border-primary/40 transition-all flex flex-col justify-between h-auto sm:h-56 active:scale-[0.98]">
+            <div class="flex items-start justify-between w-full mb-3">
+              <div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                <span class="material-symbols-outlined text-[26px]">healing</span>
+              </div>
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Rehabilitación Post-Operatorio</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant mt-1.5 leading-relaxed">Prótesis de cadera/rodilla, plastias de LCA, artroscopias y cicatrización guiada por ecografía.</p>
+            </div>
+          </button>
+
+          <!-- Card 5 -->
+          <button type="button" onclick="selectPainZone('suelo-pelvico', 'Suelo Pélvico & Mujer')" class="pain-card text-left group p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md hover:border-primary/40 transition-all flex flex-col justify-between h-auto sm:h-56 active:scale-[0.98]">
+            <div class="flex items-start justify-between w-full mb-3">
+              <div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                <span class="material-symbols-outlined text-[26px]">female</span>
+              </div>
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Suelo Pélvico &amp; Mujer</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant mt-1.5 leading-relaxed">Incontinencia urinaria, diástasis abdominal postparto, dolor pélvico y readaptación funcional.</p>
+            </div>
+          </button>
+
+          <!-- Card 6 -->
+          <button type="button" onclick="selectPainZone('otro', 'Dolor Persistente o Incierto')" class="pain-card text-left group p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md hover:border-primary/40 transition-all flex flex-col justify-between h-auto sm:h-56 active:scale-[0.98]">
+            <div class="flex items-start justify-between w-full mb-3">
+              <div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                <span class="material-symbols-outlined text-[26px]">psychology_alt</span>
+              </div>
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Dolor Persistente o Incierto</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant mt-1.5 leading-relaxed">Molestias recurrentes sin causa clara tras pasar por múltiples consultas. Diagnóstico integral.</p>
+            </div>
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 4. METODOLOGÍA (CÓMO TRABAJAMOS) ================= -->
+    <section id="metodologia" class="w-full py-16 lg:py-24 bg-surface-container-low border-y border-surface-container">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        
+        <div class="flex flex-col items-center text-center mb-16 max-w-2xl mx-auto">
+          <span class="text-xs font-bold text-primary uppercase tracking-widest bg-surface-container px-3 py-1 rounded-full mb-3">Metodología Kineva</span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-on-surface tracking-tight">Cómo trabajamos paso a paso</h2>
+          <p class="text-sm sm:text-base text-on-surface-variant mt-2">
+            Un itinerario clínico transparente para que sepas en todo momento qué fase atraviesas y cuándo recibirás el alta.
+          </p>
+        </div>
+
+        <div class="relative mb-12">
+          <!-- Connecting Line for Desktop -->
+          <div class="hidden lg:block absolute top-8 left-20 right-20 h-1 bg-surface-container-high z-0"></div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+            
+            <!-- Step 1 -->
+            <div class="bg-surface-container-lowest lg:bg-transparent p-6 lg:p-0 rounded-2xl shadow-sm lg:shadow-none flex flex-col items-center text-center">
+              <div class="w-16 h-16 rounded-full bg-primary text-on-primary text-xl font-bold flex items-center justify-center shadow-md mb-5 ring-8 ring-surface-container-low">
+                01
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-2">Ecografía y Valoración</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                Sesión íntegra de 60 minutos con historia clínica, pruebas biomecánicas y visualización ecográfica en directo del tejido.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-surface-container-lowest lg:bg-transparent p-6 lg:p-0 rounded-2xl shadow-sm lg:shadow-none flex flex-col items-center text-center">
+              <div class="w-16 h-16 rounded-full bg-primary text-on-primary text-xl font-bold flex items-center justify-center shadow-md mb-5 ring-8 ring-surface-container-low">
+                02
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-2">Alivio del Dolor</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                Terapia manual ortopédica, neuromodulación percutánea y diatermia profunda para desinflamar y recuperar rango sin dolor.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-surface-container-lowest lg:bg-transparent p-6 lg:p-0 rounded-2xl shadow-sm lg:shadow-none flex flex-col items-center text-center">
+              <div class="w-16 h-16 rounded-full bg-primary text-on-primary text-xl font-bold flex items-center justify-center shadow-md mb-5 ring-8 ring-surface-container-low">
+                03
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-2">Ejercicio &amp; Readaptación</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                Prescripción de fuerza progresiva supervisada en nuestra sala activa para devolver la tolerancia biológica al tendón y músculo.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-surface-container-lowest lg:bg-transparent p-6 lg:p-0 rounded-2xl shadow-sm lg:shadow-none flex flex-col items-center text-center">
+              <div class="w-16 h-16 rounded-full bg-primary text-on-primary text-xl font-bold flex items-center justify-center shadow-md mb-5 ring-8 ring-surface-container-low">
+                04
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-2">Alta Médica &amp; Control</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                Reevaluación objetiva, control ecográfico comparativo y pauta de mantenimiento autónomo sin dependencias periódicas.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <a href="#solicitar-cita" class="inline-flex items-center px-8 py-3.5 rounded-xl bg-primary text-on-primary font-bold text-sm sm:text-base shadow-md hover:bg-primary-container transition-all">
+            <span>Empezar por el paso 1 (Valoración de 60 min)</span>
+            <span class="material-symbols-outlined text-[20px] ml-2">east</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 5. CASOS CLÍNICOS DOCUMENTADOS ================= -->
+    <section id="casos" class="w-full py-16 lg:py-24 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+          <div>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest bg-secondary-container/60 px-3 py-1 rounded-full mb-2 inline-block">Evidencia y Evolución</span>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-on-surface tracking-tight">Casos clínicos documentados</h2>
+            <p class="text-sm sm:text-base text-on-surface-variant mt-2 max-w-xl">
+              Medimos objetivamente la escala del dolor (EVA) y el rango articular antes y después de cada tratamiento.
+            </p>
+          </div>
+          <a href="#solicitar-cita" class="inline-flex items-center text-primary font-bold text-sm hover:underline underline-offset-4 self-start lg:self-auto">
+            <span>Quiero recuperar mi movilidad</span>
+            <span class="material-symbols-outlined text-[18px] ml-1">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Responsive Container: Mobile horizontal peek swipe / Desktop 3-col grid -->
+        <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 no-scrollbar pb-4 lg:grid lg:grid-cols-3 lg:overflow-visible">
+          
+          <!-- Case 1 -->
+          <div class="snap-center shrink-0 w-[88%] sm:w-[360px] lg:w-auto p-6 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="relative h-48 rounded-2xl overflow-hidden mb-5 bg-surface-container">
+                <img 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBhX7xTQu_zi7ywZE2Qjsl8SkyyxmgMqfj3pD5Ei-6LU2Ep6B4NwFpxcE2OanBMuXMz0oJ6ad6YqcXeAwh9_MVxALqBDxFIUnX-8SPipSQZ6tDPFbe8tiNgZMmAy4tOpLfP2hzVhVJoO1AK7hYLP9Rza5vT6_kOPhGQ0OjSJyaGxhGtvfsPy18OzlD8Z9mMX0nnYi4uCbfsqBw9G4yLSqlXCBPDECD72T8rf1mQN7Qm3kQ2RECxQ1tDQ" 
+                  alt="Carlos M. recuperado de tendinopatía de rodilla" 
+                  class="w-full h-full object-cover"
+                />
+                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/95 backdrop-blur-sm text-xs font-bold text-primary shadow-sm">
+                  Alta Clínica · 7 semanas
+                </div>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-lg font-bold text-on-surface">Carlos M. (42 años)</h3>
+                <span class="text-xs font-semibold text-primary bg-surface-container px-2.5 py-0.5 rounded-full">Pádel amateur</span>
+              </div>
+              <p class="text-xs sm:text-sm text-on-surface-variant mb-6 leading-relaxed">
+                Tendinopatía rotuliana refractaria de 5 meses tratada con neuromodulación ecoguiada y ejercicio excéntrico progresivo.
+              </p>
+            </div>
+            
+            <div class="p-4 rounded-2xl bg-surface-container-low space-y-2.5">
+              <div class="flex justify-between items-center text-xs font-bold">
+                <span class="text-on-surface-variant">Escala de Dolor (EVA)</span>
+                <span class="text-primary text-sm font-extrabold">8/10 → 0/10</span>
+              </div>
+              <div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden flex">
+                <div class="bg-error/80 h-full w-[20%]"></div>
+                <div class="bg-primary h-full w-[80%]"></div>
+              </div>
+              <div class="flex justify-between text-[11px] text-on-surface-variant">
+                <span>Inicio: Dolor agudo</span>
+                <span class="text-primary font-bold">Vuelta a la pista</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 2 -->
+          <div class="snap-center shrink-0 w-[88%] sm:w-[360px] lg:w-auto p-6 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="relative h-48 rounded-2xl overflow-hidden mb-5 bg-surface-container">
+                <img 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt8ZWN2UZil0DVM89Vo5mfG9h-u89nnpUIc2-0hzw3U55JHL5rI_KD_uUcALdDjdBiMuIi1Oqer80i3tAOtA5LbCEuG8GUGtfv2urBphPA77J018NA8qNuCkDGvkQh3M3bMha6wuH4KSsVzU2kUMr2xurcGi0_lOXvT6eCW5_2ZT1s1vTuy_MqN_0V-ULts0Bx7wLFYafa5QA7GgjSkEju_Ae2d2fUUzAxpXqJXFdDIAkDiZJN93GJug" 
+                  alt="Elena R. recuperada de cervicobraquialgia" 
+                  class="w-full h-full object-cover"
+                />
+                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/95 backdrop-blur-sm text-xs font-bold text-primary shadow-sm">
+                  Alta Clínica · 5 semanas
+                </div>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-lg font-bold text-on-surface">Elena R. (34 años)</h3>
+                <span class="text-xs font-semibold text-primary bg-surface-container px-2.5 py-0.5 rounded-full">Teletrabajo 8h</span>
+              </div>
+              <p class="text-xs sm:text-sm text-on-surface-variant mb-6 leading-relaxed">
+                Cervicobraquialgia con hormigueo en brazo derecho y rigidez dorsal continua. Alivio con terapia manual y control postural.
+              </p>
+            </div>
+            
+            <div class="p-4 rounded-2xl bg-surface-container-low space-y-2.5">
+              <div class="flex justify-between items-center text-xs font-bold">
+                <span class="text-on-surface-variant">Escala de Dolor (EVA)</span>
+                <span class="text-primary text-sm font-extrabold">9/10 → 1/10</span>
+              </div>
+              <div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden flex">
+                <div class="bg-error/80 h-full w-[15%]"></div>
+                <div class="bg-primary h-full w-[85%]"></div>
+              </div>
+              <div class="flex justify-between text-[11px] text-on-surface-variant">
+                <span>Inicio: Parestesias</span>
+                <span class="text-primary font-bold">Jornada sin fatiga</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 3 -->
+          <div class="snap-center shrink-0 w-[88%] sm:w-[360px] lg:w-auto p-6 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="relative h-48 rounded-2xl overflow-hidden mb-5 bg-surface-container">
+                <img 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNcqi6xqh36XYxZSpObEHWVNOZaJ4zVGH73PdO6LAjg_LBcuCcqM7DiBhFSjPhfLknIU4fSJfy2jNQWqlwiS1QuuMhiglcNGDx-GJwxQukBsN1xMnX5XBy-XATzzLo3XsOGojiCbKzPl3rdbmyylrHCx9IyXPctPI2rwOp9go20Vf5cptxQa5pCVsvl0ZMfDHqiReSTbznNzA1XYLrTexLSpRStncERoknOx6bh6z2J21a0xoAXDtweQ" 
+                  alt="Javier G. corredor recuperado tras artroscopia" 
+                  class="w-full h-full object-cover"
+                />
+                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/95 backdrop-blur-sm text-xs font-bold text-primary shadow-sm">
+                  Alta Clínica · 10 semanas
+                </div>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-lg font-bold text-on-surface">Javier G. (51 años)</h3>
+                <span class="text-xs font-semibold text-primary bg-surface-container px-2.5 py-0.5 rounded-full">Maratoniano</span>
+              </div>
+              <p class="text-xs sm:text-sm text-on-surface-variant mb-6 leading-relaxed">
+                Post-artroscopia de menisco medial con atrofia de cuádriceps. Recuperación de simetría con readaptación neuromuscular.
+              </p>
+            </div>
+            
+            <div class="p-4 rounded-2xl bg-surface-container-low space-y-2.5">
+              <div class="flex justify-between items-center text-xs font-bold">
+                <span class="text-on-surface-variant">Escala de Dolor (EVA)</span>
+                <span class="text-primary text-sm font-extrabold">7/10 → 0/10</span>
+              </div>
+              <div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden flex">
+                <div class="bg-error/80 h-full w-[25%]"></div>
+                <div class="bg-primary h-full w-[75%]"></div>
+              </div>
+              <div class="flex justify-between text-[11px] text-on-surface-variant">
+                <span>Inicio: Cojera</span>
+                <span class="text-primary font-bold">21K completados</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 6. ABORDAJE TERAPÉUTICO (TRATAMIENTOS) ================= -->
+    <section id="tratamientos" class="w-full py-16 lg:py-24 bg-surface-container-low border-y border-surface-container">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        
+        <div class="flex flex-col items-center text-center mb-16 max-w-2xl mx-auto">
+          <span class="text-xs font-bold text-primary uppercase tracking-widest bg-surface-container px-3 py-1 rounded-full mb-3">Abordaje Terapéutico</span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-on-surface tracking-tight">Tratamientos explicados con total claridad</h2>
+          <p class="text-sm sm:text-base text-on-surface-variant mt-2">
+            Sin jerga incomprensible: así es como cada tecnología y técnica ayuda a regenerar tu tejido dañado.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- T1 -->
+          <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary mb-4 shadow-sm">
+              <span class="material-symbols-outlined text-[26px]">vital_signs</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface mb-2">Ecografía Musculoesquelética</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Miramos el interior de tu tendón, músculo o ligamento en directo. Permite ver desgarros microscópicos y conocer el estado real de la inflamación.
+            </p>
+          </div>
+
+          <!-- T2 -->
+          <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary mb-4 shadow-sm">
+              <span class="material-symbols-outlined text-[26px]">electric_bolt</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface mb-2">Neuromodulación Percutánea</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Aplicamos microcorrientes sobre nervios periféricos con una aguja milimétrica guiada por ecógrafo para apagar el dolor neuropático en el acto.
+            </p>
+          </div>
+
+          <!-- T3 -->
+          <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary mb-4 shadow-sm">
+              <span class="material-symbols-outlined text-[26px]">pan_tool</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface mb-2">Terapia Manual Avanzada</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Movilizaciones articulares específicas, tracciones vertebrales y desensibilización miofascial manual para devolver el rango articular sin rigidez.
+            </p>
+          </div>
+
+          <!-- T4 -->
+          <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary mb-4 shadow-sm">
+              <span class="material-symbols-outlined text-[26px]">fitness_center</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface mb-2">Ejercicio Terapéutico Guiado</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              El verdadero escudo frente a recaídas. Entrenamos la tolerancia a la carga con peso libre y poleas cónicas en nuestra sala activa asistida.
+            </p>
+          </div>
+
+          <!-- T5 -->
+          <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary mb-4 shadow-sm">
+              <span class="material-symbols-outlined text-[26px]">waves</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface mb-2">Diatermia y Radiofrecuencia</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Calor celular profundo que reactiva el metabolismo biológico del tejido, acelera la síntesis de colágeno y relaja el espasmo protector.
+            </p>
+          </div>
+
+          <!-- T6 -->
+          <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary mb-4 shadow-sm">
+              <span class="material-symbols-outlined text-[26px]">timer</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface mb-2">Readaptación a la Vida Activa</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Simulamos los gestos biomecánicos de tu trabajo o deporte favorito para asegurar que vuelves a correr, levantar peso o jugar sin miedo.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 7. EQUIPO MÉDICO ESPECIALISTA ================= -->
+    <section id="equipo" class="w-full py-16 lg:py-24 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        
+        <div class="flex flex-col items-center text-center mb-16 max-w-2xl mx-auto">
+          <span class="text-xs font-bold text-primary uppercase tracking-widest bg-secondary-container/60 px-3 py-1 rounded-full mb-3">Especialistas Sanitarios</span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-on-surface tracking-tight">Siempre el mismo profesional de principio a fin</h2>
+          <p class="text-sm sm:text-base text-on-surface-variant mt-2">
+            En Kineva no rotas de profesional entre sesiones. Tu proceso lo lidera un fisioterapeuta colegiado con nombre y apellidos.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Team 1 -->
+          <div class="p-6 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden mb-4 bg-surface-container border-4 border-surface-container-low shadow-inner">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoP703VQUUjW8cRlum42JjxvfphpOvolq9ydMpCA56_tKxX32eXpqIwc13rqf33a-SWyz9Gj8w6vP21r2uSbjW2DqebEC7WdKneIIqHLLO8LYxrtNlJ1YlAhrrbpc_FM4_0Qk02MASKQe9Lbqs8QY7NuUXgTurq4su7JD3KYMrkN2WzY-HOkixqayn-Fg4bBEU0BaHlsxVSZDGXed3qUnWOs15sN7ounrFtwI9SVthaEZDD5_V8_hAAw" 
+                alt="Alejandro Gómez - Director Clínico Kineva" 
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-lg font-bold text-on-surface">Alejandro Gómez</h3>
+            <p class="text-xs font-bold text-primary mt-1">Col. Nº 2841 (CPFM)</p>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+              Director Clínico · Máster en Fisioterapia Invasiva y Ecografía Musculoesquelética Avanzada.
+            </p>
+          </div>
+
+          <!-- Team 2 -->
+          <div class="p-6 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden mb-4 bg-surface-container border-4 border-surface-container-low shadow-inner">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl-athhYCOgTFQ_Dyt4hPVxl98Afkxt8beyGLsihb-8LNCqbbzDVCm05S937HZzdq6lAmybsm4uMWx7GDNbG2owKOYq2Jc1fIdcsJroihK813CeQmIxkSR7LHHrOi62KrKMgCx7z5fPT0oP5RE2O0GDYUWitJdGUFKQgw6DYNz-W-umhUQdd5L1SIAh3dVO7D4fOG3t36uDvXoYLizVtd6ElIZOAI0bCu3Z-78oxdJqdeJ4N09oD0h8w" 
+                alt="Sofía Herrero - Fisioterapia Deportiva Kineva" 
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-lg font-bold text-on-surface">Sofía Herrero</h3>
+            <p class="text-xs font-bold text-primary mt-1">Col. Nº 3412 (CPFM)</p>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+              Fisioterapia Deportiva · Especialista en readaptación funcional del Ligamento Cruzado Anterior.
+            </p>
+          </div>
+
+          <!-- Team 3 -->
+          <div class="p-6 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden mb-4 bg-surface-container border-4 border-surface-container-low shadow-inner">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKkVKhi_upRbL4czMLIFngTs4tCZlW7GMr3I9gTdL19K_cNGAttIWRwtL87n4f3wnkvAyVQmI0Q2ve6N-TBIAoEcfTXY8J2Q-TVdujeqx885aC-QMVGrb_Z-LMTKPmH0lcRBbtv-2wQOpEVJTpURtaiBzpBdUk5s5HRSwJ7gkg7h2CHldGp-ktaOGMgsmsxoT5EP3VuXTmtCGLQbjtx38F6MbO7rkIaK9snuTLKMYpGAadlgrHYesBDw" 
+                alt="Marcos Velasco - Especialista en Columna Vertebral" 
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-lg font-bold text-on-surface">Marcos Velasco</h3>
+            <p class="text-xs font-bold text-primary mt-1">Col. Nº 4890 (CPFM)</p>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+              Columna y Dolor Persistente · Experto en Terapia Manual Ortopédica (OMT) y control motor.
+            </p>
+          </div>
+
+          <!-- Team 4 -->
+          <div class="p-6 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden mb-4 bg-surface-container border-4 border-surface-container-low shadow-inner">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcCeJFJm0Vp152WEyStQ1yI5FBKwGqJulWq6p1ArG1YwbGpcIgEFG1EfZcoopb-rognQ14oPBjkFrFr0dadioWQHpuA2H8C4btV-zvXDBcOawlZ5nTW2ZeRK4RQKQdr0rwrK7bR28lc2P1BfN7CkA6dPtzgySKbNUxyCuhAEoCcIwDU7_BKNIVLmiZ32_kwC1xWWxQ_jIm0MVl9OeB00uJhBllEk11fBFTod_NKrkB816kUslg6DZNPw" 
+                alt="Laura Barba - Especialista en Suelo Pélvico" 
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-lg font-bold text-on-surface">Laura Barba</h3>
+            <p class="text-xs font-bold text-primary mt-1">Col. Nº 5122 (CPFM)</p>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+              Suelo Pélvico y Mujer · Máster en Fisioterapia Uroginecológica, diástasis y readaptación postparto.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 8. PRECIOS Y TARIFAS CLARAS ================= -->
+    <section id="precios" class="w-full py-16 lg:py-24 bg-surface-container-low border-y border-surface-container">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        
+        <div class="flex flex-col items-center text-center mb-16 max-w-2xl mx-auto">
+          <span class="text-xs font-bold text-primary uppercase tracking-widest bg-surface-container px-3 py-1 rounded-full mb-3">Transparencia Total</span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-on-surface tracking-tight">Tarifas claras, sin letra pequeña</h2>
+          <p class="text-sm sm:text-base text-on-surface-variant mt-2">
+            Emitimos factura sanitaria oficial válida para reembolso con tu seguro de salud privado.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto">
+          
+          <!-- Box 1: Regular -->
+          <div class="p-8 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Sesión Regular</div>
+              <h3 class="text-xl font-bold text-on-surface">Seguimiento Clínico</h3>
+              <div class="my-5">
+                <span class="text-4xl font-extrabold text-on-surface">55€</span>
+                <span class="text-xs text-on-surface-variant">/ sesión de 50 min</span>
+              </div>
+              <ul class="space-y-3 text-xs sm:text-sm text-on-surface-variant mb-6">
+                <li class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span>Terapia manual + ejercicio guiado</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span>Neuromodulación / Diatermia incluida</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span>Pauta de ejercicios para casa en vídeo</span>
+                </li>
+              </ul>
+            </div>
+            <a href="#solicitar-cita" onclick="selectPricing('Seguimiento Clínico (55€)')" class="w-full py-3.5 text-center rounded-xl bg-surface-container hover:bg-secondary-container text-on-surface font-bold text-sm transition-colors block">
+              Reservar Seguimiento
+            </a>
+          </div>
+
+          <!-- Box 2: Primera Valoración (Destacada) -->
+          <div class="p-8 rounded-3xl bg-primary text-on-primary shadow-2xl flex flex-col justify-between relative transform lg:-translate-y-4 border-2 border-primary-container">
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-extrabold shadow-sm tracking-wider uppercase">
+              MÁS RECOMENDADA
+            </div>
+            <div>
+              <div class="text-xs font-bold text-on-primary-container uppercase tracking-wider mb-2">Punto de Partida</div>
+              <h3 class="text-xl font-bold text-on-primary">Primera Valoración Integral</h3>
+              <div class="my-5">
+                <span class="text-4xl font-extrabold text-on-primary">65€</span>
+                <span class="text-xs text-on-primary-container">/ 60 min completos</span>
+              </div>
+              <ul class="space-y-3 text-xs sm:text-sm text-on-primary-container mb-6">
+                <li class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-secondary-container text-[20px]">check_circle</span>
+                  <span class="text-on-primary font-medium">Ecografía musculoesquelética de alta gama</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-secondary-container text-[20px]">check_circle</span>
+                  <span class="text-on-primary font-medium">Exploración funcional y ortopédica completa</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-secondary-container text-[20px]">check_circle</span>
+                  <span class="text-on-primary font-medium">Tratamiento de alivio en la misma sesión</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-secondary-container text-[20px]">check_circle</span>
+                  <span class="text-on-primary font-medium">Informe clínico escrito con plan y objetivos</span>
+                </li>
+              </ul>
+            </div>
+            <a href="#solicitar-cita" onclick="selectPricing('Primera Valoración Integral (65€)')" class="w-full py-4 text-center rounded-xl bg-surface-container-lowest text-primary font-extrabold text-sm shadow-md hover:bg-secondary-container transition-colors block">
+              Reservar Valoración (65€)
+            </a>
+          </div>
+
+          <!-- Box 3: Bono -->
+          <div class="p-8 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Tratamientos Completos</div>
+              <h3 class="text-xl font-bold text-on-surface">Bono Recuperación (5 ses.)</h3>
+              <div class="my-5">
+                <span class="text-4xl font-extrabold text-on-surface">245€</span>
+                <span class="text-xs text-on-surface-variant">/ 49€ por sesión</span>
+              </div>
+              <ul class="space-y-3 text-xs sm:text-sm text-on-surface-variant mb-6">
+                <li class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span>Ahorro directo de 30€</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span>Validez de 12 meses sin caducidad inmediata</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span>Transferible a familiares directos</span>
+                </li>
+              </ul>
+            </div>
+            <a href="#solicitar-cita" onclick="selectPricing('Bono Recuperación 5 sesiones (245€)')" class="w-full py-3.5 text-center rounded-xl bg-surface-container hover:bg-secondary-container text-on-surface font-bold text-sm transition-colors block">
+              Consultar Bonos
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Mutual & Reembolso Notice -->
+        <div class="mt-12 p-6 rounded-2xl bg-surface-container-lowest border border-surface-container max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+          <div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary flex-shrink-0">
+            <span class="material-symbols-outlined text-[26px]">receipt_long</span>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-on-surface">¿Tienes póliza de reembolso de salud?</h4>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-0.5">
+              Si tu seguro (Sanitas, Adeslas, Mapfre, DKV, Asisa...) dispone de cobertura de libre elección, emitimos tu factura sanitaria oficial con número de colegiado para que recuperes entre el 80% y el 100% del importe.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 9. PILARES DE TU PRIMERA VISITA ================= -->
+    <section class="w-full py-16 lg:py-20 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        
+        <div class="flex flex-col items-center text-center mb-14 max-w-2xl mx-auto">
+          <span class="text-xs font-bold text-primary uppercase tracking-widest bg-secondary-container/60 px-3 py-1 rounded-full mb-3">Tranquilidad Absoluta</span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-on-surface tracking-tight">Los 3 pilares de tu primera visita</h2>
+          <p class="text-sm sm:text-base text-on-surface-variant mt-2">
+            Diseñamos una experiencia sanitaria basada en la empatía, el tiempo de calidad y la máxima honestidad médica.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          
+          <div class="p-8 rounded-3xl bg-surface-container-low border border-surface-container flex flex-col items-start shadow-sm">
+            <div class="w-14 h-14 rounded-2xl bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm mb-5">
+              <span class="material-symbols-outlined text-[30px]">schedule</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface mb-2">60 Minutos Reales y de 1 a 1</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              No te dejamos solo en una camilla con máquinas. El fisioterapeuta está contigo durante toda la hora explorando, tratando manualmente y resolviendo cada una de tus inquietudes.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-surface-container-low border border-surface-container flex flex-col items-start shadow-sm">
+            <div class="w-14 h-14 rounded-2xl bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm mb-5">
+              <span class="material-symbols-outlined text-[30px]">verified_user</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface mb-2">Honestidad Diagnóstica</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Si tras valorarte consideramos que tu cuadro requiere una resonancia urgente o la intervención de un cirujano traumatólogo, te lo diremos sin rodeos y sin hacerte perder tiempo ni dinero.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-surface-container-low border border-surface-container flex flex-col items-start shadow-sm">
+            <div class="w-14 h-14 rounded-2xl bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm mb-5">
+              <span class="material-symbols-outlined text-[30px]">assignment_turned_in</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface mb-2">Plan Clínico por Escrito</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Te llevas un informe claro en tu móvil con los hallazgos de la ecografía, el pronóstico estimado de semanas de recuperación y el programa de ejercicios pautado con soporte en vídeo.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 10. OPINIONES & AVAL MÉDICO ================= -->
+    <section class="w-full py-16 lg:py-24 bg-surface-container-low border-y border-surface-container">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+          <div>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest bg-surface-container px-3 py-1 rounded-full mb-2 inline-block">Experiencias Reales</span>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-on-surface tracking-tight">Lo que opinan nuestros pacientes</h2>
+          </div>
+          
+          <!-- Google Reviews Badge -->
+          <div class="flex items-center gap-3 bg-surface-container-lowest border border-surface-container px-5 py-2.5 rounded-2xl shadow-sm self-start lg:self-auto">
+            <img 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR04G_ExcffkWHF39SKVbo-8WfHfBZrz88IQ1CFgT7QP_F_UUzQDf6crlK-DIRTikBJEiOjwH87QlEOYxkssbrzo5u_7Te3_U7S70nmIYbt_2i1YrLopUWDOQB0l32zipArUN-Ge_eZaEkWMI41LzmA_6DVb6ck17uK7-cA_kVlZUMmO-JPBdj-gqwY5tSC_bs_By3k1RdEddEyOGMRds1407hLu3q8cVlEboVsjIyIElj0BDWfuuH_Q" 
+              alt="Google Reviews" 
+              class="w-6 h-6 object-contain"
+            />
+            <div>
+              <div class="flex items-center text-primary text-xs font-bold">
+                <span class="mr-1 text-on-surface">4,9 / 5</span>
+                <span class="text-[#F59E0B]">★★★★★</span>
+              </div>
+              <p class="text-[11px] text-on-surface-variant">+620 reseñas en Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Review 1 -->
+          <div class="p-6 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex text-[#F59E0B] text-sm mb-3">
+                ★★★★★
+              </div>
+              <p class="text-xs sm:text-sm text-on-surface-variant mb-6 italic leading-relaxed">
+                "Llevaba dos años con una fascitis plantar que me impedía correr e incluso caminar más de 20 minutos. Alejandro me hizo una ecografía en la primera visita y me explicó qué estaba pasando. En 6 semanas estaba de vuelta a mi vida habitual."
+              </p>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center font-bold text-xs text-primary">
+                MG
+              </div>
+              <div>
+                <p class="text-xs sm:text-sm font-bold text-on-surface">Miguel Gómez</p>
+                <p class="text-[11px] text-on-surface-variant">Paciente de Fisioterapia Invasiva</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="p-6 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex text-[#F59E0B] text-sm mb-3">
+                ★★★★★
+              </div>
+              <p class="text-xs sm:text-sm text-on-surface-variant mb-6 italic leading-relaxed">
+                "La diferencia entre Kineva y otras mutuas o clínicas donde he estado es abismal. Aquí están una hora entera contigo, con manos y ejercicio guiado. Trato exquisito y puntualidad absoluta en la Castellana."
+              </p>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center font-bold text-xs text-primary">
+                BE
+              </div>
+              <div>
+                <p class="text-xs sm:text-sm font-bold text-on-surface">Beatriz Estévez</p>
+                <p class="text-[11px] text-on-surface-variant">Paciente de Cervicalgia</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 (Medical Endorsement) -->
+          <div class="p-6 rounded-3xl bg-surface-container border border-primary/20 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest text-primary text-xs font-bold mb-3 shadow-xs">
+                <span class="material-symbols-outlined text-[16px]">verified</span>
+                <span>Aval Traumatológico</span>
+              </div>
+              <p class="text-xs sm:text-sm text-on-surface mb-6 font-medium leading-relaxed">
+                "Derivo a mis pacientes intervenidos de LCA y hombro al equipo de Kineva con total tranquilidad. Su rigor ecográfico y el control biomecánico del ejercicio aseguran altas sin recaídas."
+              </p>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs">
+                Dr
+              </div>
+              <div>
+                <p class="text-xs sm:text-sm font-bold text-on-surface">Dr. Ignacio Carreras</p>
+                <p class="text-[11px] text-on-surface-variant">Cirujano Ortopédico y Traumatólogo (H. La Paz)</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 11. PREGUNTAS FRECUENTES (FAQ) ================= -->
+    <section class="w-full py-16 lg:py-24 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        
+        <div class="flex flex-col items-center text-center mb-14 max-w-2xl mx-auto">
+          <span class="text-xs font-bold text-primary uppercase tracking-widest bg-secondary-container/60 px-3 py-1 rounded-full mb-3">Resolvemos tus dudas</span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-on-surface tracking-tight">Preguntas frecuentes antes de acudir</h2>
+          <p class="text-sm sm:text-base text-on-surface-variant mt-2">
+            Todo lo que necesitas saber antes de tu primera consulta en nuestras instalaciones de Paseo de la Castellana.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-5xl mx-auto">
+          
+          <!-- FAQ 1 -->
+          <details class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm group [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <h3 class="text-sm sm:text-base font-bold text-on-surface group-hover:text-primary transition-colors pr-2">¿Cuánto dura la primera cita y qué debo llevar?</h3>
+              <span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform flex-shrink-0">expand_more</span>
+            </summary>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-4 leading-relaxed border-t border-surface-container pt-3">
+              Dura 60 minutos completos. Te recomendamos acudir con ropa cómoda para que podamos explorar con facilidad la articulación o zona lesionada. Si dispones de resonancias magnéticas, radiografías o informes médicos previos, tráelos para integrarlos en tu historial.
+            </p>
+          </details>
+
+          <!-- FAQ 2 -->
+          <details class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm group [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <h3 class="text-sm sm:text-base font-bold text-on-surface group-hover:text-primary transition-colors pr-2">¿La ecografía tiene algún coste adicional?</h3>
+              <span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform flex-shrink-0">expand_more</span>
+            </summary>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-4 leading-relaxed border-t border-surface-container pt-3">
+              No, en absoluto. En Kineva entendemos la ecografía musculoesquelética como una herramienta de valoración fundamental e imprescindible. Está completamente incluida en el precio de la primera valoración clínica de 65€.
+            </p>
+          </details>
+
+          <!-- FAQ 3 -->
+          <details class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm group [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <h3 class="text-sm sm:text-base font-bold text-on-surface group-hover:text-primary transition-colors pr-2">¿Duele la neuromodulación o la punción?</h3>
+              <span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform flex-shrink-0">expand_more</span>
+            </summary>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-4 leading-relaxed border-t border-surface-container pt-3">
+              Son técnicas ecoguiadas mínimamente invasivas que generan una sensación de calambre o contracción muscular rápida y muy tolerable durante unos segundos. Nunca aplicamos ninguna técnica sin tu consentimiento y respetamos siempre tu umbral de sensibilidad.
+            </p>
+          </details>
+
+          <!-- FAQ 4 -->
+          <details class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm group [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <h3 class="text-sm sm:text-base font-bold text-on-surface group-hover:text-primary transition-colors pr-2">¿Cuántas sesiones necesitaré para recuperarme?</h3>
+              <span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform flex-shrink-0">expand_more</span>
+            </summary>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-4 leading-relaxed border-t border-surface-container pt-3">
+              Depende de la cronicidad y del tipo de tejido lesionado. La media de nuestros pacientes con dolores mecánicos agudos ronda entre 3 y 5 sesiones. En recuperaciones postquirúrgicas establecemos un plan por etapas evaluadas objetivamente.
+            </p>
+          </details>
+
+          <!-- FAQ 5 -->
+          <details class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm group [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <h3 class="text-sm sm:text-base font-bold text-on-surface group-hover:text-primary transition-colors pr-2">¿Trabajáis directamente con sociedades médicas?</h3>
+              <span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform flex-shrink-0">expand_more</span>
+            </summary>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-4 leading-relaxed border-t border-surface-container pt-3">
+              Somos un centro sanitario privado para garantizar 60 minutos de tratamiento individual y exclusivo por paciente. Emitimos facturas sanitarias oficiales con número de colegiado para que reclames el reembolso de hasta el 100% en pólizas con libre elección de cuadro médico.
+            </p>
+          </details>
+
+          <!-- FAQ 6 -->
+          <details class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm group [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <h3 class="text-sm sm:text-base font-bold text-on-surface group-hover:text-primary transition-colors pr-2">¿Hay aparcamiento cerca de la clínica?</h3>
+              <span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform flex-shrink-0">expand_more</span>
+            </summary>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-4 leading-relaxed border-t border-surface-container pt-3">
+              Sí. Dispones de un parking subterráneo público justo enfrente de la clínica (Parking Cuzco / Castellana 140) con acceso directo por ascensor a menos de 50 metros de nuestro portal.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 12. UBICACIÓN & CONTACTO ================= -->
+    <section id="contacto" class="w-full py-16 lg:py-24 bg-surface-container-low border-t border-surface-container">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Clinic Info (5 cols) -->
+          <div class="lg:col-span-5 flex flex-col space-y-6">
+            <div>
+              <span class="text-xs font-bold text-primary uppercase tracking-widest bg-surface-container px-3 py-1 rounded-full mb-3 inline-block">Ubicación Privilegiada</span>
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-on-surface tracking-tight">Instalaciones en Paseo de la Castellana</h2>
+              <p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+                En pleno eje financiero y residencial de Chamartín, con máxima accesibilidad y transporte público en la puerta.
+              </p>
+            </div>
+
+            <div class="space-y-3.5">
+              
+              <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-xs">
+                <span class="material-symbols-outlined text-primary text-[24px] mt-0.5">location_on</span>
+                <div>
+                  <p class="text-sm font-bold text-on-surface">Dirección</p>
+                  <p class="text-xs sm:text-sm text-on-surface-variant">Paseo de la Castellana 142, Planta 1ª, Puerta Izq.<br/>28046 Madrid (Frente a Plaza de Cuzco)</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-xs">
+                <span class="material-symbols-outlined text-primary text-[24px] mt-0.5">directions_subway</span>
+                <div>
+                  <p class="text-sm font-bold text-on-surface">Transporte Público</p>
+                  <p class="text-xs sm:text-sm text-on-surface-variant">Metro Cuzco (Línea 10) a 40 metros · EMT Líneas 27, 40, 147 y 150</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-xs">
+                <span class="material-symbols-outlined text-primary text-[24px] mt-0.5">schedule</span>
+                <div>
+                  <p class="text-sm font-bold text-on-surface">Horario Continuado</p>
+                  <p class="text-xs sm:text-sm text-on-surface-variant">Lunes a Viernes: 08:00 a 21:00 h (ininterrumpido)<br/>Sábados: 09:00 a 14:00 h</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="flex items-center gap-3 pt-1">
+              <a href="https://maps.google.com/?q=Paseo+de+la+Castellana+142+Madrid" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-surface-container hover:bg-secondary-container text-primary font-bold text-xs sm:text-sm transition-colors">
+                <span class="material-symbols-outlined text-[18px] mr-1.5">directions</span>
+                <span>Abrir en Google Maps</span>
+              </a>
+              <a href="tel:+34912345678" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-primary text-on-primary font-bold text-xs sm:text-sm hover:bg-primary-container transition-colors shadow-sm">
+                <span class="material-symbols-outlined text-[18px] mr-1.5">call</span>
+                <span>Llamar a recepción</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Map View (7 cols) -->
+          <div class="lg:col-span-7">
+            <div class="w-full h-80 sm:h-[440px] rounded-3xl overflow-hidden shadow-md border border-surface-container bg-cover bg-center relative" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3cvt5qpOv8JHY1RkrYialOI_HN1-WXwtVuNhbOMXLoSXcwWxb1quf4OwOJwW0Je7xqBAy7tFUeV512JhShRpCV3U9ZT_Gt8TDQxrOTNT_8zQ4lT-LVbrNJUlx10tF7SXgZUCM4yQmgjVpgxOXXwJvtkciuXTB63mDxfUC3Lh0e5ITEfN_0qO6Sy5GgSSCJdE1uubE_54y_GxEwI16SpLAymAXZbiuNZBGqnSci6sfBzXh6XrEipLG6w');">
+              <div class="absolute inset-0 bg-primary/10"></div>
+              
+              <!-- Location Marker Overlay -->
+              <div class="absolute bottom-4 left-4 right-4 sm:right-auto bg-surface-container-lowest/95 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-white/50 flex items-center gap-3 max-w-sm">
+                <div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <span class="material-symbols-outlined text-[24px]">location_on</span>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-on-surface">Kineva Fisioterapia &amp; Readaptación</p>
+                  <p class="text-[11px] text-on-surface-variant">Paseo de la Castellana 142 · Madrid</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 13. FORMULARIO DE RESERVA PRIORITARIA ================= -->
+    <section id="solicitar-cita" class="w-full py-16 lg:py-24 bg-surface relative overflow-hidden">
+      <!-- Glow decoration -->
+      <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary-container/40 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        <div class="p-6 sm:p-10 lg:p-12 rounded-3xl bg-surface-container-lowest border border-surface-container shadow-2xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            
+            <!-- Text Left (5 cols) -->
+            <div class="lg:col-span-5 flex flex-col space-y-4">
+              <span class="text-xs font-bold text-primary uppercase tracking-widest bg-secondary-container/60 px-3 py-1 rounded-full self-start">Reserva Prioritaria</span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-on-surface tracking-tight leading-snug">
+                Da el primer paso para volver a moverte sin dolor
+              </h2>
+              <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                Rellena el formulario rápido y te contactaremos en menos de 2 horas lectivas para confirmarte el hueco que mejor encaje con tu agenda.
+              </p>
+              
+              <div class="pt-4 space-y-2.5">
+                <div class="flex items-center gap-2.5 text-xs sm:text-sm text-on-surface-variant">
+                  <div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+                    <span class="material-symbols-outlined text-[18px]">call</span>
+                  </div>
+                  <span>Llámanos directamente al <strong class="text-on-surface">912 345 678</strong></span>
+                </div>
+                <div class="flex items-center gap-2.5 text-xs sm:text-sm text-on-surface-variant">
+                  <div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-primary flex-shrink-0">
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+                  </div>
+                  <span>O escribe por WhatsApp al <strong class="text-on-surface">600 123 456</strong></span>
+                </div>
+              </div>
+
+              <!-- Trust badge inside form box -->
+              <div class="p-3.5 rounded-xl bg-surface-container-low border border-surface-container flex items-center gap-3 mt-2">
+                <span class="material-symbols-outlined text-primary text-[22px]">health_and_safety</span>
+                <span class="text-[11px] text-on-surface-variant font-medium">Tratamiento 1 a 1 de 60 minutos con el mismo fisioterapeuta colegiado.</span>
+              </div>
+            </div>
+
+            <!-- Form Right (7 cols) -->
+            <div class="lg:col-span-7">
+              
+              <!-- Form Success Confirmation (hidden initially) -->
+              <div id="formSuccessMessage" class="hidden p-6 sm:p-8 rounded-2xl bg-secondary-container/40 border border-secondary text-on-secondary-container flex flex-col gap-4 text-center items-center animate-fade-in">
+                <div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md">
+                  <span class="material-symbols-outlined text-[32px]">check_circle</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-on-surface">¡Solicitud recibida correctamente!</h3>
+                  <p class="text-xs sm:text-sm text-on-surface-variant mt-1.5 leading-relaxed">
+                    Un fisioterapeuta de Kineva se pondrá en contacto contigo en tu teléfono en menos de 2 horas lectivas para asignarte tu cita.
+                  </p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 w-full pt-2">
+                  <a id="successWhatsAppLink" href="https://wa.me/34600123456" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 px-4 rounded-xl bg-[#25D366] hover:brightness-95 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm">
+                    <span class="material-symbols-outlined text-[18px]">chat</span>
+                    <span>Confirmar por WhatsApp ahora</span>
+                  </a>
+                  <button type="button" onclick="resetBookingForm()" class="py-3 px-4 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-semibold text-xs sm:text-sm">
+                    Enviar otra consulta
+                  </button>
+                </div>
+              </div>
+
+              <!-- Actual Form -->
+              <form id="appointmentForm" onsubmit="handleBookingSubmit(event)" class="space-y-4 bg-surface-container-low p-6 sm:p-7 rounded-2xl border border-surface-container">
+                
+                <div>
+                  <label for="input-nombre" class="block text-xs sm:text-sm font-bold text-on-surface mb-1">Nombre y Apellidos *</label>
+                  <input type="text" id="input-nombre" required placeholder="Ej. Carmen Martínez" class="w-full px-4 py-3 rounded-xl bg-surface-container-lowest border border-surface-container text-on-surface text-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-xs transition-all"/>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="input-tel" class="block text-xs sm:text-sm font-bold text-on-surface mb-1">Teléfono móvil *</label>
+                    <input type="tel" id="input-tel" required placeholder="Ej. 612 345 678" class="w-full px-4 py-3 rounded-xl bg-surface-container-lowest border border-surface-container text-on-surface text-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-xs transition-all"/>
+                  </div>
+                  <div>
+                    <label for="input-email" class="block text-xs sm:text-sm font-bold text-on-surface mb-1">Email (para informe clínico)</label>
+                    <input type="email" id="input-email" placeholder="carmen@ejemplo.com" class="w-full px-4 py-3 rounded-xl bg-surface-container-lowest border border-surface-container text-on-surface text-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-xs transition-all"/>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="input-dolor" class="block text-xs sm:text-sm font-bold text-on-surface mb-1">¿Qué zona te duele o cuál es tu molestia? *</label>
+                  <select id="input-dolor" required class="w-full px-4 py-3 rounded-xl bg-surface-container-lowest border border-surface-container text-on-surface text-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-xs transition-all">
+                    <option value="" disabled selected>Selecciona tu zona o motivo</option>
+                    <option value="espalda">Dolor de espalda o cuello (lumbalgia, cervicalgia, hernia)</option>
+                    <option value="rodilla">Lesión de rodilla, hombro o tobillo (tendinopatía, menisco)</option>
+                    <option value="deportiva">Lesión o molestia deportiva (rotura, sobrecarga, fascitis)</option>
+                    <option value="postoperatorio">Recuperación post-operatoria (prótesis, LCA, artroscopia)</option>
+                    <option value="suelo-pelvico">Suelo pélvico o readaptación postparto</option>
+                    <option value="otro">Otra molestia / Diagnóstico incierto</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="input-horario" class="block text-xs sm:text-sm font-bold text-on-surface mb-1">Preferencia horaria</label>
+                  <select id="input-horario" class="w-full px-4 py-3 rounded-xl bg-surface-container-lowest border border-surface-container text-on-surface text-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-xs transition-all">
+                    <option value="indiferente">Cualquier horario disponible</option>
+                    <option value="manana">Mañanas (08:00 a 14:00 h)</option>
+                    <option value="tarde">Tardes (15:00 a 21:00 h)</option>
+                    <option value="sabado">Sábados por la mañana</option>
+                  </select>
+                </div>
+
+                <div class="pt-2">
+                  <button type="submit" class="w-full py-4 rounded-xl bg-primary text-on-primary font-bold text-sm sm:text-base shadow-md hover:bg-primary-container transition-all flex items-center justify-center gap-2 active:scale-98">
+                    <span>Solicitar mi Primera Valoración (65€)</span>
+                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                  </button>
+                </div>
+
+                <p class="text-[11px] text-on-surface-variant text-center pt-1 leading-normal">
+                  Tus datos médicos se tratan bajo estricta confidencialidad médica conforme al RGPD y la Ley de Autonomía del Paciente.
+                </p>
+
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="w-full bg-surface-container-low text-on-surface pt-16 pb-28 lg:pb-14 border-t border-surface-container">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        
+        <!-- Col 1: Brand -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">vital_signs</span>
+            </div>
+            <span class="text-xl font-bold text-primary">Kineva</span>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+            Centro clínico avanzado especializado en fisioterapia biomecánica, ecografía musculoesquelética y recuperación funcional basada en evidencia científica.
+          </p>
+          <div class="flex items-center gap-2 pt-1 text-xs text-on-surface-variant font-medium">
+            <span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+            <span>Centro Sanitario Autorizado CS-39420</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h3 class="text-xs font-bold text-on-surface uppercase tracking-wider mb-4">Navegación &amp; Áreas</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-on-surface-variant">
+            <li><a href="#inicio" class="hover:text-primary transition-colors">Inicio</a></li>
+            <li><a href="#dolores" class="hover:text-primary transition-colors">Diagnóstico "¿Qué te duele?"</a></li>
+            <li><a href="#metodologia" class="hover:text-primary transition-colors">Metodología Terapéutica</a></li>
+            <li><a href="#casos" class="hover:text-primary transition-colors">Casos Clínicos Documentados</a></li>
+            <li><a href="#tratamientos" class="hover:text-primary transition-colors">Especialidades Clínicas</a></li>
+            <li><a href="#equipo" class="hover:text-primary transition-colors">Equipo de Especialistas</a></li>
+            <li><a href="#precios" class="hover:text-primary transition-colors">Tarifas y Pólizas de Reembolso</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Details -->
+        <div>
+          <h3 class="text-xs font-bold text-on-surface uppercase tracking-wider mb-4">Contacto &amp; Clínica</h3>
+          <div class="space-y-3 text-xs sm:text-sm text-on-surface-variant">
+            <div class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-primary text-[18px] mt-0.5">location_on</span>
+              <span>Paseo de la Castellana 142, Planta 1ª<br/>28046 Madrid (Metro Cuzco)</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-primary text-[18px]">call</span>
+              <span>+34 912 345 678 / +34 600 123 456</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-primary text-[18px]">mail</span>
+              <span>clinica@kinevafisio.es</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-primary text-[18px]">schedule</span>
+              <span>Lun - Vie: 08:00 - 21:00 | Sáb: 09:00 - 14:00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 4: Accreditations -->
+        <div>
+          <h3 class="text-xs font-bold text-on-surface uppercase tracking-wider mb-4">Acreditaciones Sanitarias</h3>
+          <p class="text-xs text-on-surface-variant mb-4 leading-relaxed">
+            Adheridos al Colegio Profesional de Fisioterapeutas de Madrid y comprometidos con los estándares científicos internacionales.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant text-[11px] font-semibold">CPFM Col. Nº 2841</span>
+            <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant text-[11px] font-semibold">SEMAF Certificada</span>
+            <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant text-[11px] font-semibold">Ecografía Muscular ISO</span>
+            <span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant text-[11px] font-semibold">Biomédica Calidad</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Legal bar -->
+      <div class="pt-8 border-t border-surface-container flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
+        <p>© 2026 Kineva Fisioterapia &amp; Readaptación S.L.P. Todos los derechos reservados.</p>
+        <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+          <a href="#" class="hover:text-primary transition-colors">Aviso Legal</a>
+          <a href="#" class="hover:text-primary transition-colors">Política de Privacidad</a>
+          <a href="#" class="hover:text-primary transition-colors">Consentimiento Informado</a>
+          <a href="#" class="hover:text-primary transition-colors">Política de Cookies</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= FIXED BOTTOM ACTION BAR (MOBILE ONLY) ================= -->
+  <aside class="fixed bottom-0 left-0 right-0 z-40 lg:hidden pb-safe bg-surface-container-lowest/95 backdrop-blur-xl border-t border-surface-container shadow-2xl">
+    <div class="px-4 py-2.5">
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Call CTA -->
+        <a href="tel:+34912345678" class="min-h-[46px] px-3 rounded-xl bg-surface-container hover:bg-secondary-container text-primary flex items-center justify-center gap-2 font-bold text-xs sm:text-sm shadow-xs transition-all active:scale-95">
+          <span class="material-symbols-outlined text-[18px]">call</span>
+          <span>Llamar</span>
+        </a>
+        <!-- WhatsApp CTA -->
+        <a href="https://wa.me/34600123456?text=Hola,%20me%20gustar%C3%ADa%20pedir%20cita%20en%20Kineva%20Fisioterapia." target="_blank" rel="noopener noreferrer" class="min-h-[46px] px-3 rounded-xl bg-[#25D366] hover:brightness-95 text-white flex items-center justify-center gap-2 font-bold text-xs sm:text-sm shadow-sm transition-all active:scale-95">
+          <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    // 1. Mobile Menu Drawer Toggle
+    const menuBtn = document.getElementById('menuToggle');
+    const drawer = document.getElementById('navDrawer');
+    if (menuBtn && drawer) {
+      menuBtn.addEventListener('click', () => {
+        drawer.classList.toggle('hidden');
+      });
+      // Close drawer when clicking any link
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          drawer.classList.add('hidden');
+        });
+      });
+    }
+
+    // 2. Interactive "¿Qué te duele?" Selection
+    function selectPainZone(val, label) {
+      const select = document.getElementById('input-dolor');
+      if (select) {
+        select.value = val;
+      }
+      
+      // Visual feedback on selected card
+      document.querySelectorAll('.pain-card').forEach(c => {
+        c.classList.remove('ring-2', 'ring-primary', 'bg-surface-container-low');
+      });
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.add('ring-2', 'ring-primary', 'bg-surface-container-low');
+      }
+
+      // Smooth scroll to form
+      const target = document.getElementById('solicitar-cita');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // 3. Pricing Selection to prefill form
+    function selectPricing(planName) {
+      const target = document.getElementById('solicitar-cita');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // 4. Form Submission Handler
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('appointmentForm');
+      const successMsg = document.getElementById('formSuccessMessage');
+      const name = document.getElementById('input-nombre').value;
+      const phone = document.getElementById('input-tel').value;
+      const painSelect = document.getElementById('input-dolor');
+      const painText = painSelect.options[painSelect.selectedIndex]?.text || '';
+      
+      // Update dynamic WhatsApp link in success message
+      const waLink = document.getElementById('successWhatsAppLink');
+      if (waLink) {
+        const text = encodeURIComponent(`Hola, soy ${name}. Acabo de solicitar cita en la web para valorar: ${painText}. Mi teléfono es ${phone}.`);
+        waLink.href = `https://wa.me/34600123456?text=${text}`;
+      }
+
+      if (form && successMsg) {
+        form.classList.add('hidden');
+        successMsg.classList.remove('hidden');
+      }
+    }
+
+    // 5. Reset Booking Form
+    function resetBookingForm() {
+      const form = document.getElementById('appointmentForm');
+      const successMsg = document.getElementById('formSuccessMessage');
+      if (form && successMsg) {
+        form.reset();
+        successMsg.classList.add('hidden');
+        form.classList.remove('hidden');
+      }
+    }
+  </script>
+
+</body>
+</html>
